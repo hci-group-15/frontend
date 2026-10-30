@@ -153,6 +153,7 @@ dist
 dist-ssr
 coverage
 *.local
+backend-data
 
 # Editor directories and files
 .vscode/*

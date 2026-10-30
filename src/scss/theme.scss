@@ -1,0 +1,129 @@
+@use 'sass:color';
+
+$theme-red-light: (
+  on-bg: #040404,
+  bg: #ffe0e0,
+  app: #eeeeee,
+  on-app: #040404,
+  primary: #b50808,
+  primary-hover: #820808,
+  on-primary: #ffffff,
+  secondary: #fa5347,
+  secondary-hover: #ca2745,
+  on-secondary: #ffffff,
+  dimmed: #aaaaaa,
+  shadow: rgba(0, 0, 0, 0.7),
+);
+
+$theme-red-dark: (
+  on-bg: #ffffff,
+  bg: #1a0303,
+  app: #030303,
+  on-app: #ffffff,
+  primary: #510f0c,
+  primary-hover: #910f0c,
+  on-primary: #ffffff,
+  secondary: #fa5347,
+  secondary-hover: #ca2745,
+  on-secondary: #ffffff,
+  dimmed: #aaaaaa,
+  shadow: rgba(0, 0, 0, 0.7),
+);
+
+$theme-blue-light: (
+  on-bg: #000000,
+  bg: #dadae3,
+  on-app: #000000,
+  app: #fefefe,
+  on-primary: #ffffff,
+  primary: #04305c,
+  primary-hover: #144197,
+  on-secondary: #ffffff,
+  secondary: #7583da,
+  secondary-hover: #7593c0,
+  dimmed: #444444,
+  shadow: rgba(0, 0, 0, 0.7),
+);
+
+$theme-blue-dark: (
+  on-bg: #ffffff,
+  bg: #111220,
+  on-app: #ffffff,
+  app: #020202,
+  on-primary: #ffffff,
+  primary: #04305c,
+  primary-hover: #144197,
+  on-secondary: #ffffff,
+  secondary: #7583da,
+  secondary-hover: #7593c0,
+  dimmed: #aaaaaa,
+  shadow: rgba(20, 20, 20, 0.7),
+);
+
+$theme-purple-light: (
+  on-bg: #000000,
+  bg: #f5e3f5,
+  app: #ffffff,
+  on-app: #000000,
+  primary: #800580,
+  primary-hover: #500340,
+  on-primary: #ffffff,
+  secondary: #9040a5,
+  secondary-hover: #503060,
+  on-secondary: #ffffff,
+  dimmed: #aaaaaa,
+  shadow: rgba(0, 0, 0, 0.7),
+);
+
+$theme-purple-dark: (
+  on-bg: #ffffff,
+  bg: #100113,
+  app: #030303,
+  on-app: #ffffff,
+  primary: #360340,
+  primary-hover: #600955,
+  on-primary: #ffffff,
+  secondary: #9040a5,
+  secondary-hover: #503060,
+  on-secondary: #ffffff,
+  dimmed: #aaaaaa,
+  shadow: rgba(0, 0, 0, 0.7),
+);
+
+$theme-monochrome-light: (
+  on-bg: #000000,
+  bg: #e0e0e0,
+  app: #ffffff,
+  on-app: #000000,
+  primary: #a0a0a0,
+  primary-hover: #cacaca,
+  on-primary: #000000,
+  secondary: #cccccc,
+  secondary-hover: #888888,
+  on-secondary: #ffffff,
+  dimmed: #aaaaaa,
+  shadow: rgba(0, 0, 0, 0.7),
+);
+
+$theme-monochrome-dark: (
+  on-bg: #ffffff,
+  bg: #101010,
+  app: #000000,
+  on-app: #ffffff,
+  primary: #666666,
+  primary-hover: #333333,
+  on-primary: #ffffff,
+  secondary: #222222,
+  secondary-hover: #4f4f4f,
+  on-secondary: #ffffff,
+  dimmed: #aaaaaa,
+  shadow: rgba(0, 0, 0, 0.7),
+);
+
+@mixin gen-theme ($selector, $theme) {
+  #{$selector} {
+    @each $var, $value in $theme {
+      --theme-#{$var}: #{$value};
+    }
+  }
+}

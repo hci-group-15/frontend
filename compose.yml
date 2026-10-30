@@ -1,0 +1,17 @@
+services:
+  frontend:
+    image: ghcr.io/janishutz/vue-dev-runner
+    container_name: frontend
+    restart: on-failure
+    ports:
+      - 8081:8081
+    volumes:
+      - .:/mnt
+  backend:
+    image: ghcr.io/hci-group-15/backend
+    container_name: backend
+    restart: on-failure
+    ports:
+      - 8080:8080
+    volumes:
+      - ./backend-data:/data
