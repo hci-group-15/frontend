@@ -1,0 +1,132 @@
+@forward '@/scss/theme.scss';
+@forward '@/scss/app.scss';
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  background-color: var(--theme-bg);
+  color: var(--theme-on-bg);
+  font-family: sans-serif;
+
+  &.init-complete {
+    transition: background-color 0.5s, color 0.5s;
+  }
+}
+
+body {
+  transition: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--theme-on-bg);
+}
+
+.info {
+  font-style: italic;
+}
+
+.small-divider {
+  width: 10vw;
+}
+
+.divider {
+  width: 20vw;
+}
+
+// ── Notifications ──────────────────────────────────────────────────────
+.notifications {
+  .vue-notification {
+    padding: 20px;
+
+    .notification-title {
+      font-size: 1rem;
+    }
+
+    .notification-text {
+      font-size: 0.75rem;
+    }
+  }
+}
+
+::selection {
+  background-color: var(--theme-secondary);
+  color: var(--theme-on-secondary);
+}
+
+button {
+  color: var(--theme-on-primary);
+  padding: 7px;
+  background: var(--theme-primary);
+  border-radius: 20px;
+  margin: 2px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.5s, border-radius 0.5s;
+
+  &:hover {
+    border-radius: 5px;
+    background-color: var(--theme-primary-hover);
+  }
+
+  &.inactive {
+    cursor: not-allowed;
+    filter: saturate(0.2);
+  }
+
+  &.fancy-button {
+    color: var(--theme-on-primary);
+    text-decoration: none;
+    padding: 20px;
+    background: linear-gradient(45deg, var(--theme-primary), var(--theme-secondary));
+    font-size: larger;
+    transition: all 0.5s;
+    background-size: 150%;
+
+    &:hover {
+      border-radius: 5px;
+      background-position: 50%;
+    }
+
+    &.inactive {
+      cursor: not-allowed;
+
+      &:hover {
+        border-radius: 20px;
+        background-position: 0px;
+      }
+    }
+  }
+}
+
+input,
+select {
+  background: none;
+  border-radius: 10px;
+  border: solid 1px var(--theme-on-app);
+  color: var(--theme-on-app);
+  padding: 5px;
+  font-size: 0.9rem;
+}
+
+progress {
+  border: none;
+  border-radius: 10px;
+  height: 6px;
+  appearance: none;
+
+  &::-webkit-progress-value,
+  & {
+    background-color: var(--theme-primary);
+  }
+
+  &::-moz-progress-bar,
+  &::-webkit-progress-bar {
+    background-color: var(--theme-primary-hover);
+  }
+}
