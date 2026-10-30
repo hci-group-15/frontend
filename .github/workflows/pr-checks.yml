@@ -6,6 +6,8 @@ env:
 jobs:
   run_eslint:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v6
