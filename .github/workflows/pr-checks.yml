@@ -8,7 +8,6 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v6
         with:
-          ref: ${{ github.ref }}
           persist-credentials: true
       - name: Cache node modules
         id: cache-npm
